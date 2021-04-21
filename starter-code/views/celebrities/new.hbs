@@ -4,6 +4,14 @@
 <label>Name</label>
 <input type="text" name="name" />
 
+<label>Movie</label>
+<select name="movie">
+    <option value="">Choose movie</option>
+    {{#each allMovies}}
+        <option value={{id}}>{{title}}</option>
+    {{/each}}
+</select>
+
 <label>Occupation</label>
 <input type="text" name="occupation" />
 

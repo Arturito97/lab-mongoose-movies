@@ -3,13 +3,13 @@ const router = express.Router();
 const Movie = require('../models/movie.model');
 
 router.get('/movies/create', async(req, res) => {
-  res.render('movies/create');
+  res.render('movie-create');
 });
 
 router.post('/movies/create', async (req, res) => {
   const { title, genre, plot } = req.body;
-  await Movie.create(req.body);
-  res.redirect('/movies')
+  await Movie.create({ title, genre, plot });
+  res.redirect('/celebrities')
 })
 
 module.exports = router;

@@ -3,6 +3,18 @@
 <label>Name</label>
 <input type="text" name="name" value="{{celebrity.name}}" />
 
+<label>Movie</label>
+<select name="movie">
+    <option value="">Choose movie</option>
+    {{#each allMovies}}
+        {{#eq name ../celebrity.movie.name}}
+        <option value="{{id}}" selected>{{name}}</option>
+        {{else}}
+        <option value="{{id}}">{{name}}</option>
+        {{/eq}}
+    {{/each}}
+</select>
+
 <label>Occupation</label>
 <input type="text" name="occupation" value="{{celebrity.occupation}}" />
 
